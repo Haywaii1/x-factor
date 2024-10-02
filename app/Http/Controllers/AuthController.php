@@ -151,7 +151,7 @@ class AuthController extends Controller
             return redirect()->back()->with('error', 'Failed to send password reset link.');
         }
     }
-    
+
     public function passwordReset(Request $request){
         return view('auth.passwords.reset', [
             'token' => $request->token
