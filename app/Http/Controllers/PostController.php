@@ -110,9 +110,9 @@ class PostController extends Controller
         $posts = Post::where('id', $id)->update($formFields);
 
         if ($posts) {
-            return redirect('/')->with('success', "Post updated succesfully");
+            return redirect('/home')->with('success', "Post updated succesfully");
         } else {
-            return redirect('/')->with('error', "There was an error creating the post");
+            return redirect()->back()->with('error', "There was an error creating the post");
         };
     }
 

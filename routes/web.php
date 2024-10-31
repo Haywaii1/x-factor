@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ExploreController;
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/create-post', [PostController::class, 'createPost'])->name('create.post');
@@ -37,4 +38,5 @@ Route::middleware('guest')->group(function () {
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/home', [HomeController::class, 'home'])->name('home')->middleware('auth');
+Route::get('/', [ExploreController::class, 'explore'])->name('explore');
 

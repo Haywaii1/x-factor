@@ -1,70 +1,59 @@
 @extends('layouts.app')
+
 @section('content')
 
-<div class="container">
-    <div class="card" style="width: 18rem;  margin:20px;">
+<div class="container my-4">
+    <div class="card mx-auto" style="width: 18rem;">
         @if ($post->image)
-        <img src="{{ asset('posts/' . $post->image) }}" class="card-img-top" alt="...">
+            <img src="{{ asset('posts/' . $post->image) }}" class="card-img-top" alt="Post image">
         @endif
         <div class="card-body">
             <h5 class="card-title">{{ $post->title }}</h5>
             <p class="card-text">{{ $post->description }}</p>
-            <p class="card-title">{{ $post->category }}</p>
+            <p class="text-muted">{{ $post->category }}</p>
 
-            {{-- this @if bellow allows on user who posted to be able to edit and delete --}}
+            {{-- Allow only the post owner to edit or delete --}}
             @if(auth()->user()->id == $post->user_id)
-            <a href="{{ route('edit.post',  $post->id) }}" class="btn btn-primary">Edit</a>
-            <form action="{{ route('delete.post', $post->id) }}" method="post">
-            @csrf
-            @method('delete')
-            <button class= "btn btn-danger"  onclick="return check()">Delete</button>
-            </form>
+                <a href="{{ route('edit.post',  $post->id) }}" class="btn btn-primary">Edit</a>
+                <form action="{{ route('delete.post', $post->id) }}" method="post" class="d-inline">
+                    @csrf
+                    @method('delete')
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete(this.form)">Delete</button>
+                </form>
             @endif
         </div>
     </div>
-    <div>
+
+    <div class="my-4">
         <h4>Comments</h4>
+        <form action="{{ route('comment', $post->id) }}" method="post" class="w-50">
+            @csrf
+            <div class="form-group mb-2">
+                <label for="comment">Add a comment:</label>
+                <textarea name="comment" id="comment" class="form-control" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
     </div>
-    <form action="{{ route('comment', $post->id) }}" method="post" class="w-50">
-        @csrf
-        <div class="form-group">
-            <label for="comment">Comment:</label>
-            <textarea name="comment" id="comment" class="form-control"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
 
-<div>
-    <h4>All comments</h4>
-
-    <div>
-    {{-- @foreach ($comments as $comment)
-
-    @if($post->id == $comment->post_id)
-        <div>
-            {{ $comment->comment }} <br>
-
-        </div>
-    @endif --}}
-    {{-- @endforeach --}}
-
-    {{-- @foreach ($post->user as $user) --}}
-    @foreach ($post->comments as $comment)
-         {{ $comment->user->first_name }} {{ $comment->user->first_name }} <br>
-         {{ $comment->comment }} <br>
-         {{ $comment->created_at->format('d/m/y') }} <br>
-
-    {{-- @endforeach --}}
-    @endforeach
-</div>
+    <div class="mt-5">
+        <h4>All comments</h4>
+        @foreach ($post->comments as $comment)
+            <div class="p-2 border-bottom">
+                <strong>{{ $comment->user->first_name }} {{ $comment->user->last_name }}</strong>
+                <p class="mb-1">{{ $comment->comment }}</p>
+                <small class="text-muted">{{ $comment->created_at->format('d/m/y') }}</small>
+            </div>
+        @endforeach
+    </div>
 </div>
 
 @endsection
 
 <script>
-    const check = () => {
-        const check = confirm('Are you sure you want to DELETE?')
-        return check()
+    function confirmDelete(form) {
+        if (confirm('Are you sure you want to DELETE?')) {
+            form.submit();
+        }
     }
 </script>

@@ -78,14 +78,14 @@ class AuthController extends Controller
         $remember = $request->has('remember');
         auth()->login($user, $remember);
 
-        return redirect('/home')->with('success', 'Login successful');
+        return redirect('/')->with('success', 'Login successful');
     }
 
     public function logout(Request $request){
         auth()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/home')->with('success', 'Logout Successfully');
+        return redirect('/')->with('success', 'Logout Successfully');
     }
 
     public function verify($id, Request $request) {
