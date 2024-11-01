@@ -2,9 +2,9 @@
 CSS Credit: http://www.templatemo.com
 */
 
-/* 
-Voip Template 
-http://www.templatemo.com/preview/templatemo_097_voip 
+/*
+Voip Template
+http://www.templatemo.com/preview/templatemo_097_voip
 */
 body {
 	margin: 0;
@@ -16,7 +16,7 @@ body {
 	background: #6d6a6b url(images/templatemo_bg.jpg) repeat;
 }
 
-a:link, a:visited { color: #00a1ff; text-decoration: none; font-weight: bold; } 
+a:link, a:visited { color: #00a1ff; text-decoration: none; font-weight: bold; }
 a:active, a:hover { color: #00a1ff; text-decoration: underline; }
 
 p {
@@ -35,21 +35,21 @@ img {
 	clear: both;
 	width: 100%;
 	height: 1px;
-	font-size: 1px;	
+	font-size: 1px;
 }
 
 .cleaner_with_height {
 	clear: both;
 	width: 100%;
 	height: 30px;
-	font-size: 1px;	
+	font-size: 1px;
 }
 
 .cleaner_with_width {
 	float: left;
 	width: 20px;
 	height: 30px;
-	font-size: 1px;	
+	font-size: 1px;
 }
 
 #templatemo_wrapper {
@@ -77,11 +77,11 @@ img {
 #templatemo_banner h1 {
 	margin: 0px;
 	padding: 0px;
-	padding: 80px 0 20px 0;	
+	padding: 80px 0 20px 0;
 	font-size: 50px;
 	font-weight: bold;
 	color: #fff;
-	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;	
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 #templatemo_banner p {
@@ -115,7 +115,7 @@ img {
 	color: #009dff;
 	padding: 0 0 20px 0;
 	margin: 0 0 10px 0;
-	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;	
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 #templatemo_content h2 {
@@ -123,7 +123,7 @@ img {
 	color: #009dff;
 	padding: 0 0 10px 0;
 	margin: 0 0 10px 0;
-	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;	
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 #templatemo_content h3 {
@@ -131,7 +131,7 @@ img {
 	color: #c6ca1d;
 	padding: 0 0 5px 30px;
 	margin: 0 0 5px 0;
-	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;	
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
 	background: url(images/templatemo_list_icon.jpg) top left no-repeat;
 }
 
@@ -189,7 +189,7 @@ img {
 	margin: 30px 0px;
 	padding: 0 40px;
 	border-right: 1px solid #332e30;
-	background-color: #221e1f;	
+	background-color: #221e1f;
 }
 
 .section_02_subsection li a {
@@ -208,6 +208,63 @@ img {
 	padding: 0 0 15px 25px;
 	background: url(images/templatemo_list_icon_02.jpg) top left no-repeat;
 }
+
+#templatemo_container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 10px 10px 10px;
+}
+
+/* banner */
+#templatemo_banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 915px; /* Matches #templatemo_container width */
+    height: 250px;
+    padding: 0 20px; /* Adjust padding as needed */
+    margin: 0 auto 0px auto; /* Centers banner and aligns with container */
+    background: black; /* Black background */
+    color: #fff;
+    border-radius: 8px 8px 0px 0px;
+}
+
+/* #video_container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+} */
+
+
+.banner_wrapper {
+    max-width: 50%;
+}
+
+#templatemo_banner h1,
+#templatemo_banner p {
+    margin: 0;
+}
+
+.banner-image {
+    height: 100%; /* Image fills the full height of the container */
+    max-width: 45%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 
 
 /* footer */

@@ -98,7 +98,7 @@ class AuthController extends Controller
         if (!$user->hasVerifiedEmail()) {
             $user->markEmailAsVerified();
             event(new Verified($user));
-            return redirect('/home')->with('success', 'Email verified successfully');
+            return redirect('/')->with('success', 'Email verified successfully');
         } else {
             return redirect('/')->with('error', 'Email already verified');
         }
