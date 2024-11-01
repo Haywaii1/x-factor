@@ -117,7 +117,6 @@
 
                     <div class="section_01_right">
                         <div id="video_container">
-                            <h2>Featured Video</h2>
                             <div id="player"></div> <!-- This div will host the YouTube player -->
                         </div>
                     </div>
