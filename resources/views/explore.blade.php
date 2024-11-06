@@ -107,7 +107,7 @@
                         <img src="{{ asset('assets/images/explore/templatemo_image_01.jpg') }}" alt="image">
 
                         <p>Nigerian music, particularly Afrobeats, has also gained global acclaim, with artists like
-                            Burna Boy, Wizkid, and Davido leading the charge, blending traditional African rhythms with
+                            Burna Boy, Wizkid, and Davido leading the charge, blending traditional African rhythms wth
                             modern genres like hip-hop and dancehall.
                         </p>
                         <p>Social media platforms play a big role, helping entertainers reach audiences locally and
@@ -130,10 +130,10 @@
                         <h2>Featured Services</h2>
                         <p>Suspen disse a nibh tristique justo rhoncus volutpat.</p>
                         <ul>
-                            <li><a href="#">Free Flash Templates</a></li>
-                            <li><a href="#">CSS Web Templates</a></li>
-                            <li><a href="#">Web Design Blog</a></li>
-                            <li><a href="#">Premium Templates</a></li>
+                            <li><a href="#">Music Promotion</a></li>
+                            <li><a href="#">Shows Promotion</a></li>
+                            <li><a href="#">Beats Development</a></li>
+                            <li><a href="#">Shows Sponsor</a></li>
                         </ul>
                         <a href="#">read more...</a>
                     </div>
